@@ -87,6 +87,8 @@ Time.deltaTime : 한 프레임 돌아오는데 걸리는 시간
 10프레임 - 1초에 10 unit 이동
 Time.deltaTime : 0.1초
 
+this.transform.position += new Vector3(0f, 0f, 1f); * Time.deltaTime * 10;   //1씩 증가
+
 this.transform.position += new Vector3(0f, 0f, 1f); * Time.deltaTime;   //0.1씩 증가
 this.transform.position += new Vector3(0f, 0f, 1f); * Time.deltaTime;
 this.transform.position += new Vector3(0f, 0f, 1f); * Time.deltaTime;
