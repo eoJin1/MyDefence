@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7384968259476312193}
+  - component: {fileID: 9086783880918148033}
   - component: {fileID: 5204409124770297470}
   - component: {fileID: 6390476125691461985}
   - component: {fileID: 2305747625058132856}
@@ -34,6 +35,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9086783880918148033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934219988804235152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187ceb3af810ba049abcaa68f016e316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.56280106, g: 0.9811321, b: 0.54147387, a: 0}
+  hoverMaterial: {fileID: 2100000, guid: b93f0d6dce513214085dfe045984982d, type: 2}
+  towerPrefab: {fileID: 8657958498309684539, guid: 59194b02e05f67e4fb0146ae8cc8b7f9, type: 3}
 --- !u!33 &5204409124770297470
 MeshFilter:
   m_ObjectHideFlags: 0
