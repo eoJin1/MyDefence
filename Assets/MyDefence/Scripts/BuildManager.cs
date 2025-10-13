@@ -42,7 +42,7 @@ namespace MyDefence
         private void Start()
         {
             //초기화 - 임시
-            turretToBuild = machineGunPrefab;
+            //turretToBuild = machineGunPrefab;
         }
         #endregion
 
@@ -52,5 +52,10 @@ namespace MyDefence
             return turretToBuild;
         }
         #endregion
+
+        public void SetTurretToBuild(GameObject turret)
+        {
+            turretToBuild = turret;
+        }
     }
 }

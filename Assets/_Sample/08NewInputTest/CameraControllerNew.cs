@@ -22,7 +22,7 @@ namespace Sample
         public float border = 10f;
         #endregion
 
-        /* 1) 스크립트를 이용하여 값 가져오기
+        //1) 스크립트를 이용하여 값 가져오기
         #region Unity Event Test
         private void Awake()
         {
@@ -35,12 +35,14 @@ namespace Sample
         {
             //new inputsystem class 객체 활성화
             inputActions.Enable();
+            //inputActions.Camera.Jump.performed += Jump;
         }
 
         private void OnDisable()
         {
             //new inputsystem class 객체 비활성화
             inputActions.Disable();
+            //inputActions.Camera.Jump.performed -= Jump;
         }
 
         private void Update()
@@ -77,70 +79,71 @@ namespace Sample
                 this.transform.Translate(Vector3.right * Time.deltaTime * moveSpeed, Space.World);
             }
         }
-        #endregion
-        */
-
-        /* 2) SendMessage 방법
-        #region Unity Event Method
-        private void Update()
-        {
-            //카메라 이동
-            //이동: 방향 * Time.delatTime * moveSpeed
-            Vector3 dir = new Vector3(inputVector.x, 0f, inputVector.y);
-            transform.Translate(dir * Time.deltaTime * moveSpeed, Space.World);
-        }
-        #endregion
-
-        #region Custom Method
-        public void OnMove(InputValue value)
-        {
-            inputVector = value.Get<Vector2>();
-        }
-
-        public void OnJump(InputValue value)
-        {
-            if(value.isPressed)
-            {
-                Debug.Log("점프 버튼을 눌렀습니다");
-            }
-        }
-        #endregion
-        */
-
-        //3) Unity Event 등록 방법
-        #region Unity Event Method
-        private void Update()
-        {
-            //카메라 이동
-            //이동: 방향 * Time.delatTime * moveSpeed
-            Vector3 dir = new Vector3(inputVector.x, 0f, inputVector.y);
-            transform.Translate(dir * Time.deltaTime * moveSpeed, Space.World);
-        }
-        #endregion
-
-        #region Custom Method
-        public void Move(InputAction.CallbackContext context)
-        {
-            inputVector = context.ReadValue<Vector2>();
-        }
-
-        public void Jump(InputAction.CallbackContext context)
-        {
-            //context.started  누르기 시작했을때
-            //context.performed 눌렀을때(1번 호출)
-            //context.canceled    눌렀다가 뗄때
-
-            if(context.performed)
-            {
-                Debug.Log("점프 버튼을 눌렀습니다");
-            }
-
-        }
-
-        #endregion
     }
 }
+        #endregion
 
+
+/* 2) SendMessage 방법
+#region Unity Event Method
+private void Update()
+{
+    //카메라 이동
+    //이동: 방향 * Time.delatTime * moveSpeed
+    Vector3 dir = new Vector3(inputVector.x, 0f, inputVector.y);
+    transform.Translate(dir * Time.deltaTime * moveSpeed, Space.World);
+}
+#endregion
+
+#region Custom Method
+public void OnMove(InputValue value)
+{
+    inputVector = value.Get<Vector2>();
+}
+
+public void OnJump(InputValue value)
+{
+    if(value.isPressed)
+    {
+        Debug.Log("점프 버튼을 눌렀습니다");
+    }
+}
+#endregion
+*/
+
+/* 3) Unity Event 등록 방법
+#region Unity Event Method
+/
+private void Update()
+{
+    //카메라 이동
+    //이동: 방향 * Time.delatTime * moveSpeed
+    Vector3 dir = new Vector3(inputVector.x, 0f, inputVector.y);
+    transform.Translate(dir * Time.deltaTime * moveSpeed, Space.World);
+}
+#endregion
+
+#region Custom Method
+public void Move(InputAction.CallbackContext context)
+{
+    inputVector = context.ReadValue<Vector2>();
+}
+
+public void Jump(InputAction.CallbackContext context)
+{
+    //context.started  누르기 시작했을때
+    //context.performed 눌렀을때(1번 호출)
+    //context.canceled    눌렀다가 뗄때
+
+    if(context.performed)
+    {
+        Debug.Log("점프 버튼을 눌렀습니다");
+    }
+
+}
+
+#endregion
+*/
 
 /*
 1. Input Actions Editor 창 셋팅하기
