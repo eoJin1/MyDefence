@@ -43,8 +43,13 @@ namespace MyDefence
         #endregion
 
         #region Custom Method
+        //종점 도착
         private void Arrive()
         {
+            //라이프 1개 사용
+            PlayerStats.UseLive(1);
+
+            //Enemy 킬
             Destroy(this.gameObject);
         }
         #endregion
