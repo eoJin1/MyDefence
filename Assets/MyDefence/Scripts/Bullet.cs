@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace MyDefence
 {
@@ -16,6 +17,11 @@ namespace MyDefence
 
         //타격 이펙트 프리팹 오브젝트
         public GameObject impactPrefab;
+
+        //공격 데미지
+        [SerializeField]
+        private float attackDamage = 50f;
+
         #endregion
 
         #region Unity Event Method
@@ -49,9 +55,10 @@ namespace MyDefence
 
         #region Custom Method
         //매개변수로 들어온 타겟으로 저장
+        [SerializeField]
         public void SetTarget(Transform _target)
         {
-            target = _target;
+            target=_target;
         }
 
         //타겟 명중
@@ -70,10 +77,18 @@ namespace MyDefence
         }
 
         //타격당한 적에게 데미지 주기
-        protected void Damage(Transform enemy)
+        protected void Damage(Transform _target)
         {
             //타겟 킬
-            Destroy(enemy.gameObject);
+            //Destroy(_target.gameObject);
+
+            //_target에게 데미지를 준다
+            Enemy enemy = _target.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(attackDamage);
+            }
+            
         }
         #endregion
     }

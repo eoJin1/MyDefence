@@ -14,6 +14,8 @@ namespace MyDefence
         //타워 리스트
         public TowerBlueprint machineGun;
         public TowerBlueprint rocketTower;
+        public TowerBlueprint laserTower;
+
         #endregion
 
         #region Unity Event Method
@@ -32,11 +34,16 @@ namespace MyDefence
             buildManager.SetTurretToBuild(machineGun);
         }
 
-        //로컷타워 버튼 선택시 호출되는 함수
+        //로켓타워 버튼 선택시 호출되는 함수
         public void SelectRocketTower()
         {
-            //Debug.Log("로켓 타워 프리팹를 건설될 타워에 저장하였습니다");
             buildManager.SetTurretToBuild(rocketTower);
+        }
+
+        //레이저타워 버튼 선택시 호출되는 함수
+        public void SelectLaserTower()
+        {
+            buildManager.SetTurretToBuild(laserTower);
         }
         #endregion
     }

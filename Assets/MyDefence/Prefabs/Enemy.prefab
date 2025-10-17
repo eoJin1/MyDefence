@@ -122,3 +122,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  starthealth: 100
+  deathEffectPrefab: {fileID: 7198944033944907739, guid: fa4cd64f0d1cb0346974dfa6c081da2a, type: 3}
