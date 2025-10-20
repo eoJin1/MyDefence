@@ -1,21 +1,24 @@
-using MyDefence;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
-public class DrawLivesUI : MonoBehaviour
+namespace MyDefence
 {
-    #region Variables
-    //라이프 UI
-    public TextMeshProUGUI livesCount;
-    #endregion
-
-    #region Unity Event Method
-    private void Update()
+    /// <summary>
+    /// 게임중 가지고 있는 Life 갯수를 그리는 UI 클래스
+    /// </summary>
+    public class DrawLivesUI : MonoBehaviour
     {
-        //라이프 데이터 및 UI 갱신
-        livesCount.text = PlayerStats.Lives.ToString();
+        #region Variables
+        //Life UI : 생명 갯수
+        public TextMeshProUGUI livesCount;
+        #endregion
 
-
+        #region Unity Event Method
+        private void Update()
+        {
+            //Life 데이터 UI 적용
+            livesCount.text = PlayerStats.Lives.ToString();
+        }
+        #endregion
     }
-    #endregion
 }

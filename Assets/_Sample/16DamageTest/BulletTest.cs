@@ -1,11 +1,9 @@
 using UnityEngine;
+using MyDefence;
 
-namespace MyDefence
+namespace Sample
 {
-    /// <summary>
-    /// 탄환 발사체를 관리하는 클래스
-    /// </summary>
-    public class Bullet : MonoBehaviour
+    public class BulletTest : MonoBehaviour
     {
         #region Variables
         //타겟 오브젝트
@@ -80,12 +78,40 @@ namespace MyDefence
             //Destroy(_target.gameObject);
 
             // _target에게 attackDamage를 준다
-            Enemy enemy = _target.GetComponent<Enemy>();
+            /*Enemy enemy = _target.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.TakeDamage(attackDamage);
+            }*/
+
+            /*Zombie zombie = _target.GetComponent<Zombie>();
+            if (zombie)
+            {
+                zombie.TakeDamage(attackDamage);
             }
-            
+
+            Slime slime = _target.GetComponent<Slime>();
+            if (slime)
+            {
+                slime.TakeDamage(attackDamage);
+            }*/
+
+            //다형성: 부모 클래스의 이름으로 자식 클래스의 인스턴스를 읽어온다
+            //Monster 클래스를 상속받은 몬스터 찾기
+            Monster monster = _target.GetComponent<Monster>();
+            if (monster != null)
+            {
+                monster.TakeDamage(attackDamage);
+            }
+
+            //IDamageable 인터페이스를 상속받는 몬스터 찾기
+            IDamageable damageable = _target.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.TakeDamage(attackDamage);
+            }
+
+
         }
         #endregion
     }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace MyDefence
 {
@@ -11,11 +12,10 @@ namespace MyDefence
         //BuildManager(싱글톤) 객체 선언
         private BuildManager buildManager;
 
-        //타워 리스트
+        //타워 선택 리스트
         public TowerBlueprint machineGun;
         public TowerBlueprint rocketTower;
         public TowerBlueprint laserTower;
-
         #endregion
 
         #region Unity Event Method
@@ -37,12 +37,14 @@ namespace MyDefence
         //로켓타워 버튼 선택시 호출되는 함수
         public void SelectRocketTower()
         {
+            //Debug.Log("로켓 타워 데이터들을 건설될 타워에 저장하였습니다");
             buildManager.SetTurretToBuild(rocketTower);
         }
 
-        //레이저타워 버튼 선택시 호출되는 함수
+        //레이저 타워 버튼 선택시 호출되는 함수
         public void SelectLaserTower()
         {
+            //Debug.Log("레이저 타워 데이터들을 건설될 타워에 저장하였습니다");
             buildManager.SetTurretToBuild(laserTower);
         }
         #endregion

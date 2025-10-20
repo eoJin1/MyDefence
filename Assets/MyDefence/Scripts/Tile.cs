@@ -54,7 +54,7 @@ namespace MyDefence
         private void OnMouseDown()
         {
             //UI로 가려져 있으면 설치 못한다
-            if (EventSystem.current.IsPointerOverGameObject())
+            if(EventSystem.current.IsPointerOverGameObject())
             {
                 return;
             }
@@ -89,12 +89,12 @@ namespace MyDefence
 
             //만약 타워를 선택하지 않았으면 변경되지 않는다
             if (buildManager.CannotBuild)
-            {
+            {   
                 return;
             }
 
             //건설비용 체크
-            if (buildManager.HasBuildCost)
+            if(buildManager.HasBuildCost)
             {
                 //renderer.material.color = hoverColor;
                 renderer.material = hoverMaterial;
@@ -117,7 +117,7 @@ namespace MyDefence
         private void BuildTower()
         {
             //건설비용 체크
-            if (buildManager.HasBuildCost == false)
+            if(buildManager.HasBuildCost == false)
             {
                 Debug.Log("건설 비용이 부족합니다");
                 return;
@@ -136,7 +136,7 @@ namespace MyDefence
             //towerToBuild = null; 건설 후 다시 건설하지 못하게 한다
             buildManager.SetTurretToBuild(null);
 
-            Debug.Log($"건설하고 남은 소지금: {PlayerStats.Money}");
+            //Debug.Log($"건설하고 남은 소지금: {PlayerStats.Money}");
         }
         #endregion
     }

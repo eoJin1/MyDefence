@@ -1289,7 +1289,7 @@ MonoBehaviour:
     cost: 250
     offsetPos: {x: 0, y: 0, z: 0}
   laserTower:
-    prefab: {fileID: 4978718259775941834, guid: a908976d0b08dfb468202b16b2f1be1a, type: 3}
+    prefab: {fileID: 3804299710496298998, guid: a908976d0b08dfb468202b16b2f1be1a, type: 3}
     cost: 350
     offsetPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &722768234
@@ -1538,7 +1538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startMoney: 400
-  startlife: 10
+  startLife: 10
 --- !u!4 &881135532
 Transform:
   m_ObjectHideFlags: 0
@@ -1566,6 +1566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b074e4d80dea6146b2d5af62824c9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameOver: 0
   isCheating: 1
 --- !u!1 &925063196
 GameObject:
@@ -1915,7 +1916,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1001515374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d60c4b4c61341c439d2e4b9aae46317, type: 3}
+  m_Script: {fileID: 11500000, guid: bb243ba61cf60b04b96e20f62fcdcdec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moneyText: {fileID: 1001515376}
@@ -2521,7 +2522,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1338747347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cad097a0e7d123048923e22bcd45e041, type: 3}
+  m_Script: {fileID: 11500000, guid: d48291fea0c0fe648ab53bf39a9b0c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   livesCount: {fileID: 1338747349}
