@@ -116,7 +116,7 @@ namespace MyDefence
         public void Slow(float rate)    //40%
         {
             speed = startSpeed * (1 - rate);       //4 * (1 - 0.4) = 2.4
-            Debug.Log($"Speed: {speed}");
+            //Debug.Log($"Speed: {speed}");
         }
         #endregion
     }
