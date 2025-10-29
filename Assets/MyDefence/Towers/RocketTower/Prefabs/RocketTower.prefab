@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partToRotate: {fileID: 517009716128816449}
-  rotateSpeed: 10
+  rotateSpeed: 30
   attackRange: 12
   searchTimer: 0.2
   fireTimer: 4

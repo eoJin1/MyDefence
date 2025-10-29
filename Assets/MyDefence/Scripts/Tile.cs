@@ -37,11 +37,10 @@ namespace MyDefence
         //타워 건설 효과
         public GameObject buildEffectPrefab;
         //판매 효과
-        public GameObject sellEffectPrefab;
+        public GameObject sellTowerPrefab;
 
-        //타워 업그레이드 여부 체크
-        public bool isUpgradeComplete = false;
-
+        //타워 업그레이드 완료 여부 체크
+        public bool isUpgradeCompleted = false;
         #endregion
 
         #region Unity Event Method
@@ -161,7 +160,7 @@ namespace MyDefence
             PlayerStats.UseMoney(blueprint.upgradeCost);
 
             //업그레이드 완료 처리
-            isUpgradeComplete = true;
+            isUpgradeCompleted = true;
 
             //기존에 설치된 타워 킬
             Destroy(tower);
@@ -177,21 +176,22 @@ namespace MyDefence
             buildManager.DeselectTile();
         }
 
-        //설치된 타워를 판매(제거) 한다
+        //설치된 타워를 판매(제거)한다
         public void SellTower()
         {
-            //Debug.Log("설치된 타워를 판매(제거) 한다");
+            //Debug.Log("설치된 타워를 판매(제거) 합니다");
+
             //판매 가격 벌기
             PlayerStats.AddMoney(blueprint.GetSellCost());
 
             //업그레이드 완료 초기화
-            isUpgradeComplete = false;
+            isUpgradeCompleted = false;
 
             //타워 제거(킬)
             Destroy(tower);
 
-            //판매 이펙트 - 생성 후 2초 후 킬 예약
-            GameObject effectGo = Instantiate(sellEffectPrefab, this.transform.position, Quaternion.identity);
+            //판매 이펙트 효과 - 생성 후 2초 후 킬 예약
+            GameObject effectGo = Instantiate(sellTowerPrefab, this.transform.position, Quaternion.identity);
             Destroy(effectGo, 2f);
 
             //선택된 타일 해제

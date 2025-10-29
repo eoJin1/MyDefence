@@ -22,9 +22,8 @@ namespace MyDefence
         //업그레이드 버튼
         public Button upgradeButton;
 
-        //판매가격 text
+        //판매 가격 text
         public TextMeshProUGUI sellCostText;
-
         #endregion
 
         #region Custom Method
@@ -35,18 +34,18 @@ namespace MyDefence
             targetTile = tile;
             this.transform.position = tile.transform.position;
 
-            //타일 UI
-            if (targetTile.isUpgradeComplete)   //업그레이드 됐으면
-            {   
+            //타일 UI value 셋팅
+            if(targetTile.isUpgradeCompleted)
+            {
                 upgradeCostText.text = "DONE";
-                upgradeButton.interactable = false; 
+                upgradeButton.interactable = false;
             }
             else
-            { 
-                upgradeCostText.text = targetTile.blueprint.upgradeCost.ToString() + "G";   //안 됐으면 돈 표시
+            {
+                upgradeCostText.text = targetTile.blueprint.upgradeCost.ToString() + " G";
                 upgradeButton.interactable = true;
             }
-            sellCostText.text = (targetTile.blueprint.cost / 2).ToString() + "G";
+            sellCostText.text = targetTile.blueprint.GetSellCost().ToString() + " G";
 
             ui.SetActive(true);
         }
@@ -61,7 +60,6 @@ namespace MyDefence
         //업그레이드 버튼을 선택했습니다.
         public void UpgradeTower()
         {
-            //Debug.Log("설치된 타워를 업그레이드 합니다");
             targetTile.UpgradeTower();
         }
 
