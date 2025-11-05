@@ -8294,21 +8294,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - prefab: {fileID: 8656447022745702264, guid: b4fc913505dc738439c1fd83919846fb, type: 3}
-    count: 1
-    delayTime: 0.5
-  - prefab: {fileID: 8656447022745702264, guid: b4fc913505dc738439c1fd83919846fb, type: 3}
     count: 2
     delayTime: 0.5
   - prefab: {fileID: 8656447022745702264, guid: b4fc913505dc738439c1fd83919846fb, type: 3}
-    count: 6
+    count: 5
     delayTime: 0.5
-  - prefab: {fileID: 8656447022745702264, guid: 20e48326d73673d48b438ca76ab6b13b, type: 3}
-    count: 3
-    delayTime: 1
+  - prefab: {fileID: 8656447022745702264, guid: b4fc913505dc738439c1fd83919846fb, type: 3}
+    count: 8
+    delayTime: 0.5
   - prefab: {fileID: 8656447022745702264, guid: 719ea314bc67fef409e5dce4f0246799, type: 3}
-    count: 10
+    count: 8
     delayTime: 0.33
-  enemyPrefab: {fileID: 8656447022745702264, guid: b4fc913505dc738439c1fd83919846fb, type: 3}
+  - prefab: {fileID: 8656447022745702264, guid: 20e48326d73673d48b438ca76ab6b13b, type: 3}
+    count: 5
+    delayTime: 1
+  next: {fileID: 0}
   spawnTimer: 5
   startButton: {fileID: 1003496796}
   waveCountUI: {fileID: 212058269}

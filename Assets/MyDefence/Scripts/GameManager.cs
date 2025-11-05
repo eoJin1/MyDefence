@@ -1,4 +1,3 @@
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 namespace MyDefence
@@ -48,6 +47,7 @@ namespace MyDefence
             //초기화
             IsGameOver = false;
             IsLevelClear = false;
+
         }
 
         private void Update()

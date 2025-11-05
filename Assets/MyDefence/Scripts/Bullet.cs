@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace MyDefence
 {
@@ -80,12 +81,30 @@ namespace MyDefence
             //Destroy(_target.gameObject);
 
             // _target에게 attackDamage를 준다
-            Enemy enemy = _target.GetComponent<Enemy>();
+            /*Enemy enemy = _target.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.TakeDamage(attackDamage);
             }
-            
+
+            Enemy_N enemy_N = _target.GetComponent<Enemy_N>();
+            if (enemy_N != null)
+            {
+                enemy_N.TakeDamage(attackDamage);
+            }
+            */
+
+            IDamageable damageable = target.GetComponent<IDamageable>();
+            if (damageable == null)
+            {
+                damageable = target.GetComponent<IDamageable>();
+            }
+
+            if (damageable != null)
+            {
+                damageable.TakeDamage(attackDamage);
+            }
+
         }
         #endregion
     }

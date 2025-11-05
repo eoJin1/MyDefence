@@ -76,7 +76,8 @@ namespace MyDefence
         #region Custom Method
         //레이져 빔 쏘기
         private void ShootLaser()
-        {            
+        {
+            /*
             float frameDamage = Time.deltaTime * laserDamage;   //프레임당 데미지
             Enemy enemy = target.GetComponent<Enemy>();
             if (enemy != null)
@@ -87,6 +88,32 @@ namespace MyDefence
                 //이동속도
                 enemy.Slow(slowRate);
             }
+
+            Enemy_N enemy_N = target.GetComponent<Enemy_N>();
+            if (enemy_N != null)
+            {
+                //데미지 주기
+                enemy_N.TakeDamage(frameDamage);
+
+                //이동속도
+                enemy_N.Slow(slowRate);
+            }
+            */
+            float frameDamage = Time.deltaTime * laserDamage;   //프레임당 데미지
+            IDamageable damageable = target.GetComponent<IDamageable>();
+            if (damageable == null)
+            {
+                damageable = target.GetComponent<IDamageable>();
+            }
+            if (damageable != null)
+            {
+                //데미지 주기
+                damageable.TakeDamage(frameDamage);
+
+                //이동속도
+                damageable.Slow(slowRate);
+            }
+        
 
             /*damageCountdown += Time.deltaTime;
             if (damageCountdown >= damageTimer)
